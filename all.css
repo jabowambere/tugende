@@ -1,0 +1,572 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* CSS Variables for Professional Room Booking Theme */
+:root {
+    --background: #ffffff;
+    --foreground: #1a1a1a;
+    --muted: #f5f5f5;
+    --muted-foreground: #6b7280;
+    --border: #e5e7eb;
+    --input: #f9fafb;
+    --primary: #3b82f6;
+    --primary-foreground: #ffffff;
+    --secondary: #10b981;
+    --secondary-foreground: #ffffff;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    --radius: 0.5rem;
+    
+    /* Room booking specific colors */
+    --room-gradient-from: #3b82f6;
+    --room-gradient-to: #8b5cf6;
+    --room-success: #10b981;
+    --room-warning: #f59e0b;
+    --room-error: #ef4444;
+    --room-neutral: #6b7280;
+}
+
+/* Utility Classes */
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.space-y-6 > * + * {
+    margin-top: 1.5rem;
+}
+
+.space-x-1 > * + * {
+    margin-left: 0.25rem;
+}
+
+.space-x-2 > * + * {
+    margin-left: 0.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.w-16 {
+    width: 4rem;
+}
+
+.h-16 {
+    height: 4rem;
+}
+
+.w-8 {
+    width: 2rem;
+}
+
+.h-8 {
+    height: 2rem;
+}
+
+.w-5 {
+    width: 1.25rem;
+}
+
+.h-5 {
+    height: 1.25rem;
+}
+
+.h-4 {
+    width: 1rem;
+}
+
+.w-4 {
+    width: 1rem;
+}
+
+.h-12 {
+    height: 3rem;
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+.p-8 {
+    padding: 2rem;
+}
+
+.px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.pr-12 {
+    padding-right: 3rem;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.mb-8 {
+    margin-bottom: 2rem;
+}
+
+.mt-1 {
+    margin-top: 0.25rem;
+}
+
+.mt-2 {
+    margin-top: 0.5rem;
+}
+
+.mt-6 {
+    margin-top: 1.5rem;
+}
+
+.mr-2 {
+    margin-right: 0.5rem;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.max-w-md {
+    max-width: 28rem;
+}
+
+.rounded-xl {
+    border-radius: 0.75rem;
+}
+
+.rounded-2xl {
+    border-radius: 1rem;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-xl {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-2xl {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.border-2 {
+    border-width: 2px;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.right-2 {
+    right: 0.5rem;
+}
+
+.right-3 {
+    right: 0.75rem;
+}
+
+.top-1\/2 {
+    top: 50%;
+}
+
+.transform {
+    transform: var(--tw-transform);
+}
+
+.-translate-y-1\/2 {
+    --tw-translate-y: -50%;
+    transform: translate(var(--tw-translate-x, 0), var(--tw-translate-y)) rotate(var(--tw-rotate, 0)) skewX(var(--tw-skew-x, 0)) skewY(var(--tw-skew-y, 0)) scaleX(var(--tw-scale-x, 1)) scaleY(var(--tw-scale-y, 1));
+}
+
+.pointer-events-none {
+    pointer-events: none;
+}
+
+.flex-1 {
+    flex: 1 1 0%;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Main Background Gradient */
+.room-gradient-bg {
+    background: linear-gradient(135deg, var(--room-gradient-from) 0%, var(--room-gradient-to) 100%);
+    background-attachment: fixed;
+}
+
+/* Form Container */
+.form-card {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Form Styling */
+.form-item {
+    margin-bottom: 1.5rem;
+}
+
+/* Input Field Styling */
+.input-field {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--border);
+    border-radius: 0.75rem;
+    background-color: var(--input);
+    color: var(--foreground);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.input-field:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    transform: translateY(-1px);
+}
+
+.input-field:focus + .floating-label,
+.input-field:not(:placeholder-shown) + .floating-label,
+.input-field:valid + .floating-label {
+    top: 0;
+    font-size: 0.75rem;
+    color: var(--primary);
+    background: var(--background);
+    padding: 0 0.25rem;
+}
+
+/* Select Field Styling */
+select.input-field {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: none;
+    cursor: pointer;
+}
+
+select.input-field:focus + .floating-label,
+select.input-field:valid + .floating-label {
+    top: 0;
+    font-size: 0.75rem;
+    color: var(--primary);
+    background: var(--background);
+    padding: 0 0.25rem;
+}
+
+/* Floating Label */
+.floating-label {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--background);
+    padding: 0 0.25rem;
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.select-label {
+    background: var(--background);
+}
+
+/* Button Styling */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, rgba(59, 130, 246, 0.8) 100%);
+    color: var(--primary-foreground);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Toggle Password Button */
+#togglePassword {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--muted-foreground);
+    transition: color 0.3s ease;
+}
+
+#togglePassword:hover {
+    color: var(--primary);
+}
+
+/* Password Strength Indicator */
+.password-strength-bar {
+    height: 4px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    background-color: var(--muted);
+}
+
+.password-strength-bar.very-weak {
+    background-color: var(--destructive);
+}
+
+.password-strength-bar.weak {
+    background-color: #f97316;
+}
+
+.password-strength-bar.fair {
+    background-color: var(--room-warning);
+}
+
+.password-strength-bar.good {
+    background-color: var(--room-success);
+}
+
+.password-strength-bar.strong {
+    background-color: #059669;
+}
+
+/* Text Colors */
+.text-foreground {
+    color: var(--foreground);
+}
+
+.text-muted-foreground {
+    color: var(--muted-foreground);
+}
+
+.text-primary {
+    color: var(--primary);
+}
+
+.text-destructive {
+    color: var(--destructive);
+}
+
+/* Links */
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: rgba(59, 130, 246, 0.8);
+}
+
+/* Checkbox */
+.checkbox {
+    width: 1rem;
+    height: 1rem;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+/* Validation Messages */
+.validation-message {
+    color: var(--destructive);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.validation-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Icon Styling */
+.icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Background Colors */
+.bg-background {
+    background-color: var(--background);
+}
+
+.bg-gradient-to-br {
+    background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-card {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .text-3xl {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    
+    .h-12 {
+        height: 2.75rem;
+    }
+    
+    .input-field {
+        padding: 0.625rem 0.875rem;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #0f172a;
+        --foreground: #f8fafc;
+        --muted: #1e293b;
+        --muted-foreground: #64748b;
+        --border: #334155;
+        --input: #1e293b;
+    }
+    
+    .form-card {
+        background: rgba(15, 23, 42, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .floating-label {
+        background: var(--background);
+    }
+    
+    .select-label {
+        background: var(--background);
+    }
+}
+
+/* Loading State */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.loading .btn-primary {
+    cursor: not-allowed;
+}
+
+/* Animation for form submission */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+/* Success and Error States */
+.success {
+    border-color: var(--room-success);
+}
+
+.error {
+    border-color: var(--destructive);
+}
+
+/* Focus visible for accessibility */
+.input-field:focus-visible,
+.btn-primary:focus-visible,
+.checkbox:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Smooth transitions for better UX */
+* {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
