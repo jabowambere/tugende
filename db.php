@@ -3,7 +3,7 @@ $server="localhost";
 $username="root";
 $password="";
 $database="bookings";
-$connection = mysqli_connect('db', 'user', 'userpassword', 'bookings');
+$connection = mysqli_connect('db', 'appuser', 'apppassword', 'bookings');
 if(isset($_POST['register'])){
     $Email=$_POST['email'];
     $Role=$_POST['roles'];
