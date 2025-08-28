@@ -3,12 +3,19 @@ $server="localhost";
 $username="root";
 $password="";
 $database="bookings";
-$connection=mysqli_connect($server, $username, $password, $database);
+$connection = mysqli_connect('db', 'user', 'userpassword', 'bookings');
 if(isset($_POST['register'])){
     $Email=$_POST['email'];
     $Role=$_POST['roles'];
     $Pass=$_POST['pass'];
     $Password=password_hash($Pass, PASSWORD_DEFAULT);
+    $pattern = '/^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).+$/';
+
+if (preg_match($pattern, $Password)) {
+    echo "Password is valid.";
+} else {
+    echo "Password is invalid. It must contain at least one uppercase letter, one number, and one symbol.";
+}
     $query="INSERT INTO rooms (email, roles, pass)VALUES('$Email', '$Role', '$Password')";
     mysqli_query($connection, $query);
     header("location:login.php?mess='Registered Successfully'");
