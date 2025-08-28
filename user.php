@@ -35,7 +35,7 @@
         
         <div class="rooms-grid">
             <?php
-            $connection = mysqli_connect("localhost", "root", "", "bookings");
+            $connection = mysqli_connect("db", "appuser", "apppassword", "bookings");
             $query = "SELECT * FROM booking";
             $result = mysqli_query($connection, $query);
             
