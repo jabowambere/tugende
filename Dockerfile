@@ -11,6 +11,9 @@ WORKDIR /var/www/html
 # Copy project files
 COPY . .
 
+# Set default page to home.php (change if needed)
+RUN echo "DirectoryIndex home.php" >> /etc/apache2/apache2.conf
+
 # Expose port
 EXPOSE 80
 
