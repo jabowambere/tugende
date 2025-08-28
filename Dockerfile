@@ -3,13 +3,13 @@ FROM php:8.2-apache
 # Enable Apache Rewrite Module
 RUN a2enmod rewrite
 
+# Install mysqli + pdo_mysql extensions
+RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable mysqli
+
 WORKDIR /var/www/html
 
 # Copy project files
 COPY . .
-
-# Tell Apache what to serve as the default page
-RUN echo "DirectoryIndex home.php" >> /etc/apache2/apache2.conf
 
 # Expose port
 EXPOSE 80
